@@ -3,14 +3,17 @@
 /* Write a function that take a string and return true if the string only contain uppercase and lowercase
 characters (no numbers and symbols) and it should end with capital A else return false */
 
-function capitalA(s) {}
+function capitalA(s) {
+  let condition = /[A-Za-z\s]+A$/;
+  return condition.test(s);
+}
 
 /* Write a function that take a string and return true if the the sting is following the emails pattern
 which end with io (example@example.io) */
 
 function ioEmail(email) {
-  // Add your logic.
-  return;
+  let condition = /^([a-z])+\@[a-z]+\.io/;
+  return condition.test(email);
 }
 
 /* You have a text that contain image names with their extention you need to write a function to 
@@ -20,7 +23,10 @@ required extention are jpg, jpeg and png.
 
 function imagesSearcher(text) {
   let arr = [];
-  // Add your logic.
+  let condition = /[a-zA-Z]+(\.jpg|\.jpeg|\.png)/g;
+
+  arr.push(text.match(condition));
+
   return arr;
 }
 
